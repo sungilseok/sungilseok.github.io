@@ -32,7 +32,7 @@ export function AboutSection({
             <SectionHeading_Clickable onClick={onExpand}>
               {`About Me`}
             </SectionHeading_Clickable>
-            <p className="text-body leading-relaxed text-black md:text-lg md:leading-relaxed">
+            <p className="text-body leading-relaxed text-black md:text-lg md:leading-relaxed text-justify">
               {data.text}
             </p>
           </div>
