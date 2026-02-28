@@ -7,7 +7,7 @@ import {
   SkillsSection,
   WorkSection,
   AboutSection,
-  ContactSection,
+  PublicationsSection,
   SectionHeading_Clickable,
   getClipFrom,
 } from "./sections";
@@ -59,7 +59,7 @@ export default function MobileLayout({
         className="grid h-full"
         style={{
           gridTemplateRows:
-            "minmax(0, 2.5fr) minmax(0, 2.5fr) minmax(0, 0.7fr) minmax(0, 0.7fr) minmax(0, 1.5fr)",
+            "minmax(0, 2.5fr) minmax(0, 2.5fr) minmax(0, 0.7fr) minmax(0, 0.5fr) minmax(0, 2fr)",
         }}
       >
         {/* Hero Section */}
@@ -78,7 +78,7 @@ export default function MobileLayout({
           className="flex cursor-pointer items-center justify-between overflow-hidden border-b border-black bg-white px-6 transition-colors duration-200 hover:bg-gray-50"
         >
           <SectionHeading_Clickable onClick={handleWorkExpand}>
-            Work
+            Publications
           </SectionHeading_Clickable>
           <div onClick={handleWorkExpand} className="text-xl">
             +
@@ -100,7 +100,7 @@ export default function MobileLayout({
 
         {/* Contact Section */}
         <div className="overflow-hidden bg-white px-6 py-6">
-          <ContactSection data={siteData.contact} />
+          <WorkSection data={siteData.projectCategories} />
         </div>
       </div>
 
@@ -110,8 +110,8 @@ export default function MobileLayout({
         clipFrom={clipFrom}
         uniqueKey="work-expanded"
       >
-        <WorkSection
-          data={siteData.projectCategories}
+        <PublicationsSection
+          data={siteData.publications}
           onExpand={handleWorkExpand}
           isExpanded={true}
         />

@@ -4,15 +4,16 @@ import type {
   AboutData,
   ContactEntry,
   ProjectCategory,
+  Publication,
 } from "./types";
 
 // Re-export types so existing imports keep working.
-export type { ContactEntry, Project, ProjectCategory } from "./types";
+export type { ContactEntry, Project, ProjectCategory, Publication } from "./types";
 
 // ─── Hero ────────────────────────────────────────────────────
 export const heroData: HeroData = {
-  greeting: "Hi, I am XXX",
-  titles: ["a template", "still a template", "just a template"],
+  greeting: "Hi, I'm Sungil Seok(Anderson).",
+  titles: ["Nice to see you :)", "Still nice to see you :)"],
 };
 
 // ─── Skills ──────────────────────────────────────────────────
@@ -29,24 +30,36 @@ export const aboutData: AboutData = {
 };
 
 // ─── Contact ─────────────────────────────────────────────────
-export const contactData: ContactEntry[] = [
+export const contactData: ContactEntry[] = [];
+
+// ─── Publications ─────────────────────────────────────────────
+export const publicationsData: Publication[] = [
   {
-    type: "Email",
-    value: "xxxxxxxx@g123.com",
-    href: "mailto:xxxxxxxx@g123.com",
+    title: "Your Paper Title Here",
+    venue: "Conference / Journal Name",
+    year: "2024",
   },
 ];
 
 // ─── Work / Projects ─────────────────────────────────────────
 export const projectCategories: ProjectCategory[] = [
   {
-    category: "Web Development",
+    category: "Ph.D. Student",
     projects: [
       {
-        title: "XXX",
-        image: "/projects/placeholder.png",
-        techStack: ["GSAP", "Three.js"],
-        href: "#",
+        title: "Hong Kong University of Science and Technology",
+        image: "",
+        techStack: ["Ph.D., Information Systems"],
+      },
+      {
+        title: "Tsinghua University",
+        image: "",
+        techStack: ["MEng., Big Data Technology and Engineering"],
+      },
+      {
+        title: "Yonsei University",
+        image: "",
+        techStack: ["B.A., Economics"],
       },
     ],
   },

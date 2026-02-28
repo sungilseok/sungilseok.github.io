@@ -34,10 +34,18 @@ export type ProjectCategory = {
   projects: Project[];
 };
 
+export type Publication = {
+  title: string;
+  venue: string;
+  year: string;
+  href?: string;
+};
+
 export type SiteData = {
   hero: HeroData;
   skills: SkillsData;
   about: AboutData;
   contact: ContactEntry[];
   projectCategories: ProjectCategory[];
+  publications: Publication[];
 };

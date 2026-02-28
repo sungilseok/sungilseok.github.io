@@ -31,7 +31,7 @@ const DEFAULT_SIZES: PanelSizes = {
   topHeight: 25,
   topLeftWidth: 55,
   bottomLeftWidth: 40,
-  bottomRightTopHeight: 60,
+  bottomRightTopHeight: 50,
 };
 
 export function useResizablePanels(

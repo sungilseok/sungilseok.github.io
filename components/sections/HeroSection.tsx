@@ -8,10 +8,10 @@ type HeroSectionProps = {
 export function HeroSection({ data }: HeroSectionProps) {
   return (
     <div className="flex h-full flex-col justify-center">
-      <h1 className="heading-display">{data.greeting}</h1>
+      <h1 className="heading-section">{data.greeting}</h1>
       <RotatingText
         texts={data.titles}
-        mainClassName="heading-display"
+        mainClassName="heading-section"
         staggerFrom={"random"}
         initial={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}

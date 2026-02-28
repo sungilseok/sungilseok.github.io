@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type ProjectCardProps = {
   title: string;
   image: string;
@@ -9,7 +7,6 @@ type ProjectCardProps = {
 
 export function ProjectCard({
   title,
-  image,
   techStack,
   href,
 }: ProjectCardProps) {
@@ -23,18 +20,8 @@ export function ProjectCard({
       {...cardProps}
       className="relative group block overflow-hidden rounded-2xl bg-[#fdfdfd] transition-shadow hover:shadow-lg"
     >
-      {/* Image Area */}
-      <div className="relative aspect-2/1 w-full overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-      </div>
-
       {/* Footer */}
-      <div className="absolute bottom-0 w-full flex items-center justify-between px-4 py-1 bg-white/80">
+      <div className="w-full flex items-center justify-between px-4 py-3">
         {/* Title */}
         <h4 className="heading-card text-black">{title}</h4>
 

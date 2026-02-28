@@ -7,7 +7,7 @@ import {
   SkillsSection,
   WorkSection,
   AboutSection,
-  ContactSection,
+  PublicationsSection,
   getClipFrom,
 } from "./sections";
 import { useResizablePanels, useEntryAnimation } from "./hooks";
@@ -156,15 +156,15 @@ export default function ResizableLayout({
         className="absolute bottom-0 left-0 right-0 flex"
         style={{ height: `${bottomHeight}%` }}
       >
-        {/* Work Section (Left) */}
+        {/* Work Section (Left) - empty */}
         <div
           ref={workPanelRef}
           className="relative h-full overflow-auto"
           style={{ width: `${sizes.bottomLeftWidth}%` }}
         >
           <div ref={workContentRef} className="h-full p-4">
-            <WorkSection
-              data={siteData.projectCategories}
+            <PublicationsSection
+              data={siteData.publications}
               onExpand={handleWorkExpand}
             />
           </div>
@@ -226,7 +226,7 @@ export default function ResizableLayout({
             style={{ height: `${100 - sizes.bottomRightTopHeight}%` }}
           >
             <div ref={contactContentRef} className="h-full p-4">
-              <ContactSection data={siteData.contact} />
+              <WorkSection data={siteData.projectCategories} />
             </div>
           </div>
         </div>
@@ -239,8 +239,8 @@ export default function ResizableLayout({
         padding="p-8"
         uniqueKey="work-expanded"
       >
-        <WorkSection
-          data={siteData.projectCategories}
+        <PublicationsSection
+          data={siteData.publications}
           onExpand={handleWorkExpand}
           isExpanded={true}
         />

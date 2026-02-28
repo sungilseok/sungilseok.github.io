@@ -18,7 +18,7 @@ export function WorkSection({
     <div className="relative h-full">
       <div className="flex items-center justify-between">
         <SectionHeading_Clickable onClick={onExpand}>
-          Work
+          Education
         </SectionHeading_Clickable>
       </div>
       {isExpanded && <CloseButton onClick={onExpand} />}
