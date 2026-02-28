@@ -22,6 +22,7 @@ export function WorkSection({
         </SectionHeading_Clickable>
       </div>
       {isExpanded && <CloseButton onClick={onExpand} />}
+
       {data.map((group) => (
         <div key={group.category} className="mb-4">
           <p className="mt-2 text-meta">{group.category}</p>

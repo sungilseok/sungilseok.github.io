@@ -15,8 +15,8 @@ import ExpandedOverlay from "./sections/ui/ExpandedOverlay";
 
 type MobileLayoutProps = {
   siteData: SiteData;
-  expandedSection: "work" | "about" | null;
-  setExpandedSection: (section: "work" | "about" | null) => void;
+  expandedSection: "work" | "about" | "education" | null;
+  setExpandedSection: (section: "work" | "about" | "education" | null) => void;
 };
 
 export default function MobileLayout({
@@ -28,6 +28,7 @@ export default function MobileLayout({
 
   const workRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const educationRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleWorkExpand = () => {
@@ -47,6 +48,16 @@ export default function MobileLayout({
       const rect = aboutRef.current?.getBoundingClientRect();
       if (rect) setSourceRect(rect);
       setExpandedSection("about");
+    }
+  };
+
+  const handleEducationExpand = () => {
+    if (expandedSection === "education") {
+      setExpandedSection(null);
+    } else {
+      const rect = educationRef.current?.getBoundingClientRect();
+      if (rect) setSourceRect(rect);
+      setExpandedSection("education");
     }
   };
 
@@ -98,9 +109,17 @@ export default function MobileLayout({
           </div>
         </div>
 
-        {/* Contact Section */}
-        <div className="overflow-hidden bg-white px-6 py-6">
-          <WorkSection data={siteData.projectCategories} />
+        {/* Education Section */}
+        <div
+          ref={educationRef}
+          className="flex cursor-pointer items-center justify-between overflow-hidden border-t border-black bg-white px-6 transition-colors duration-200 hover:bg-gray-50"
+        >
+          <SectionHeading_Clickable onClick={handleEducationExpand}>
+            Education
+          </SectionHeading_Clickable>
+          <div onClick={handleEducationExpand} className="text-xl">
+            +
+          </div>
         </div>
       </div>
 
@@ -125,6 +144,18 @@ export default function MobileLayout({
         <AboutSection
           data={siteData.about}
           onExpand={handleAboutExpand}
+          isExpanded={true}
+        />
+      </ExpandedOverlay>
+
+      <ExpandedOverlay
+        isOpen={expandedSection === "education"}
+        clipFrom={clipFrom}
+        uniqueKey="education-expanded"
+      >
+        <WorkSection
+          data={siteData.projectCategories}
+          onExpand={handleEducationExpand}
           isExpanded={true}
         />
       </ExpandedOverlay>

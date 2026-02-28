@@ -36,11 +36,13 @@ export const contactData: ContactEntry[] = [];
 export const publicationsData: Publication[] = [
   {
     title: "MiniFed : LLM-based Agentic Workflow for Simulating FOMC Meeting",
+    authors: "with Shuide Wen, Qiyuan Yang, Juan Feng and Wenming Yang",
     venue: "Pacific Asia Conference on Information Systems",
     year: "2025",
   },
   {
     title: "DFCH: Diffusion Based Conditional Heteroskedasticity for Generating Long-Term and High-Frequency Financial Time-Series Data",
+    authors: "with Shuide Wen, Wenming Yang and Juan Feng",
     venue: "IEEE International Conference on e-Business Engineering",
     year: "2024",
   },

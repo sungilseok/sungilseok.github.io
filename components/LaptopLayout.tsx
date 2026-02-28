@@ -15,8 +15,8 @@ import ExpandedOverlay from "./sections/ui/ExpandedOverlay";
 
 type ResizableLayoutProps = {
   siteData: SiteData;
-  expandedSection: "work" | "about" | null;
-  setExpandedSection: (section: "work" | "about" | null) => void;
+  expandedSection: "work" | "about" | "education" | null;
+  setExpandedSection: (section: "work" | "about" | "education" | null) => void;
 };
 
 export default function ResizableLayout({
@@ -30,6 +30,7 @@ export default function ResizableLayout({
   // Refs for panel containers (used to capture bounding rect for expansion)
   const workPanelRef = useRef<HTMLDivElement>(null);
   const aboutPanelRef = useRef<HTMLDivElement>(null);
+  const educationPanelRef = useRef<HTMLDivElement>(null);
 
   const handleWorkExpand = useCallback(() => {
     if (expandedSection === "work") {
@@ -48,6 +49,16 @@ export default function ResizableLayout({
       const rect = aboutPanelRef.current?.getBoundingClientRect();
       if (rect) setSourceRect(rect);
       setExpandedSection("about");
+    }
+  }, [expandedSection]);
+
+  const handleEducationExpand = useCallback(() => {
+    if (expandedSection === "education") {
+      setExpandedSection(null);
+    } else {
+      const rect = educationPanelRef.current?.getBoundingClientRect();
+      if (rect) setSourceRect(rect);
+      setExpandedSection("education");
     }
   }, [expandedSection]);
 
@@ -222,11 +233,15 @@ export default function ResizableLayout({
 
           {/* Contact Section */}
           <div
+            ref={educationPanelRef}
             className="absolute bottom-0 left-0 right-0 overflow-auto"
             style={{ height: `${100 - sizes.bottomRightTopHeight}%` }}
           >
             <div ref={contactContentRef} className="h-full p-4">
-              <WorkSection data={siteData.projectCategories} />
+              <WorkSection
+                data={siteData.projectCategories}
+                onExpand={handleEducationExpand}
+              />
             </div>
           </div>
         </div>
@@ -255,6 +270,19 @@ export default function ResizableLayout({
         <AboutSection
           data={siteData.about}
           onExpand={handleAboutExpand}
+          isExpanded={true}
+        />
+      </ExpandedOverlay>
+
+      <ExpandedOverlay
+        isOpen={expandedSection === "education"}
+        clipFrom={clipFrom}
+        padding="p-8"
+        uniqueKey="education-expanded"
+      >
+        <WorkSection
+          data={siteData.projectCategories}
+          onExpand={handleEducationExpand}
           isExpanded={true}
         />
       </ExpandedOverlay>
