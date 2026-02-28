@@ -26,7 +26,7 @@ export function ProjectCard({
         <h4 className="heading-card text-black">{title}</h4>
 
         {/* Tech Stack */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 mr-6">
           {techStack.map((tech) => (
             <span key={tech} className="text-meta">
               {tech}

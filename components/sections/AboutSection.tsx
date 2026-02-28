@@ -49,7 +49,7 @@ export function AboutSection({
         </SectionHeading_Clickable>
       </div>
 
-      <div className="mt-3 flex items-start gap-3 sm:mt-4 sm:gap-4 xl:gap-6">
+      <div className="mt-3 flex items-start gap-1 sm:mt-4 sm:gap-2 xl:gap-2">
         <div className="relative h-24 w-24 shrink-0 sm:h-32 sm:w-32 md:h-40 md:w-40 xl:h-56 xl:w-56">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -58,7 +58,7 @@ export function AboutSection({
             className="h-full w-full object-contain"
           />
         </div>
-        <p className="flex-1 text-base leading-relaxed text-black sm:text-lg">{data.text}</p>
+        <p className="flex-1 text-base leading-relaxed text-black sm:text-lg text-justify pr-6">{data.text}</p>
       </div>
     </div>
   );

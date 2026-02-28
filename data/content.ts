@@ -18,14 +18,14 @@ export const heroData: HeroData = {
 
 // ─── Skills ──────────────────────────────────────────────────
 export const skillsData: SkillsData = {
-  skills: "claude, chatgpt, copilot, openclaw, gemini, deepseek ",
-  highlights: ["claude", "chatgpt"],
+  skills: "Chinese, English, Korean, Python, R, Stata, Vibe coding",
+  highlights: ["Chinese", "English", "Korean"],
 };
 
 // ─── About ───────────────────────────────────────────────────
 export const aboutData: AboutData = {
-  image: "/pic.png",
-  imageAlt: " Character Illustration",
+  image: "/figure.png",
+  imageAlt: "Sungil Seok",
   text: `I'm Sungil Seok, a Ph.D. student in Information Systems at HKUST Business School. My research sits at the intersection of AI and business & AI and health, with a focus on causal inference and human-computer interaction. I hold an M.Eng. in Big Data Technology from Tsinghua University and a B.A. in Economics from Yonsei University. I'm passionate about bridging cutting-edge AI research with real-world business and health problems.`,
 };
 
@@ -45,7 +45,7 @@ export const publicationsData: Publication[] = [
     year: "2024",
   },
   {
-    title: "Still thinking",
+    title: "Still Publishing",
   },
 ];
 
@@ -57,17 +57,17 @@ export const projectCategories: ProjectCategory[] = [
       {
         title: "Hong Kong University of Science and Technology",
         image: "",
-        techStack: ["Ph.D., Information Systems"],
+        techStack: ["Ph.D., Information Systems", "2025-2029"],
       },
       {
         title: "Tsinghua University",
         image: "",
-        techStack: ["MEng., Big Data Technology and Engineering"],
+        techStack: ["MEng., Big Data Technology and Engineering", "2022-2025"],
       },
       {
         title: "Yonsei University",
         image: "",
-        techStack: ["B.A., Economics"],
+        techStack: ["B.A., Economics", "2019-2022"],
       },
     ],
   },
