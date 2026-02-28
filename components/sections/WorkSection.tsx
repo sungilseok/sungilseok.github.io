@@ -27,7 +27,7 @@ export function WorkSection({
         <div key={group.category} className="mb-4">
           <p className="mt-2 text-meta">{group.category}</p>
           <div
-            className={`mt-4 ${isExpanded ? "grid grid-cols-2 gap-6" : "space-y-4"}`}
+            className="mt-4 space-y-4"
           >
             {group.projects.map((project) => (
               <ProjectCard
