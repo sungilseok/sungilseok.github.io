@@ -34,9 +34,11 @@ export function PublicationsSection({
               className="block rounded-2xl bg-[#fdfdfd] px-4 py-3 transition-shadow hover:shadow-lg"
             >
               <p className="heading-card text-black">{pub.title}</p>
-              <p className="mt-1 text-meta text-gray-500">
-                {pub.venue} · {pub.year}
-              </p>
+              {(pub.venue || pub.year) && (
+                <p className="mt-1 text-meta text-gray-500">
+                  {[pub.venue, pub.year].filter(Boolean).join(" · ")}
+                </p>
+              )}
             </Wrapper>
           );
         })}

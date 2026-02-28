@@ -58,7 +58,7 @@ export function AboutSection({
             className="h-full w-full object-contain"
           />
         </div>
-        <p className="flex-1 text-body text-black">{data.text}</p>
+        <p className="flex-1 text-base leading-relaxed text-black sm:text-lg">{data.text}</p>
       </div>
     </div>
   );

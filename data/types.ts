@@ -36,8 +36,8 @@ export type ProjectCategory = {
 
 export type Publication = {
   title: string;
-  venue: string;
-  year: string;
+  venue?: string;
+  year?: string;
   href?: string;
 };
 
